@@ -30,7 +30,7 @@ export default class HolbertonCourse {
 
   // length's accessor and Mutator
   get length() {
-    return this_length;
+    return this._length;
   }
 
   set length(newLength) {
@@ -42,7 +42,7 @@ export default class HolbertonCourse {
 
   // students'accessor and Mutator
   get students() {
-    return this_students;
+    return this._students;
   }
 
   set students(newStudents) {
