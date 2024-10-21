@@ -9,7 +9,7 @@ export default class Pricing {
    * Call setter directly to check params validations
    */
     this.amount = amount;
-    this._currency = currency;
+    this.currency = currency;
   }
 
   get amount() {
