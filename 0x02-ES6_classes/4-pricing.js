@@ -17,8 +17,8 @@ export default class Pricing {
   }
 
   set amount(newAmount) {
-    if (typeof newAccount === 'number')
-      this._account = newAmount;
+    if (typeof newAmount === 'number')
+      this._amount = newAmount;
     else
       throw TypeError('Amount must be a number')
   }
@@ -34,13 +34,22 @@ export default class Pricing {
       throw TypeError('Currency must be a currency');
   }
 
-  // displayFullPrice() {
-  //   return `${this._amount}`
-  // }
+  displayFullPrice() {
+    return `${this._amount}: ${this._currency.name} (${this._currency.code})`;
+  }
+
 
   static convertPrice(amount, conversionRate) {
-    this.amount = amount;
+    /**
+   * Static method to convert the price to another currency using a conversion rate.
+   * @param {number} amount - The price amount.
+   * @param {number} conversionRate - The conversion rate to apply.
+   * @return {number} The converted price.
+    */
+
     if (typeof conversionRate === 'number')
       return conversionRate * this.amount;
+    else
+      throw new TypeError('Conversion rate must be a number');
   }
 }
